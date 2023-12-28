@@ -31,6 +31,7 @@ class Groupalarm extends utils.Adapter {
         this.apiKey = 0;
         this.maxAlarms = 0;
         this.maxPolling = 0;
+        this.decryptSettings = {};
 
         this.on("ready", this.onReady.bind(this));
         this.on("stateChange", this.onStateChange.bind(this));
@@ -121,9 +122,33 @@ class Groupalarm extends utils.Adapter {
             return type;
         };
 
+        // Schleife über alle Schlüssel-Werte-Paare des Objektes
         for (const key in obj) {
             const value = obj[key];
             const stateId = `${baseId}.${key}`;
+
+            // Prüfen, ob der aktuelle Key entschlüsselt werden soll
+            if (this.decryptSettings[key] === false) {
+                // Wenn der Tree nicht entschlüsselt werden soll, kopiere den kompletten Tree
+                // @ts-ignore
+                await this.setObjectNotExistsAsync(stateId, {
+                    type: "state",
+                    common: {
+                        name: key,
+                        type: "json",
+                        role: "value",
+                        read: true,
+                        write: false,
+                    },
+                    native: {},
+                });
+
+                await this.setStateAsync(stateId, {
+                    val: JSON.stringify(value),
+                    ack: true,
+                });
+                continue; // Überspringe die weitere Verarbeitung dieses Keys
+            }
 
             if (value !== null && typeof value === "object") {
                 // Erstelle ein Unterobjekt für Objekte und Arrays
@@ -170,6 +195,20 @@ class Groupalarm extends utils.Adapter {
         this.log.info("Alarme: " + this.maxAlarms);
         this.log.info("Zeit: " + this.maxPolling);
         this.log.info("Api: " + this.apiKey);
+
+        // Lese die Einstellungen, welche Trees entschlüsselt werden sollen
+        this.decryptSettings = {
+            alarmResources: this.config.decryptAlarmResources || false,
+            alarmStrength: this.config.decryptAlarmStrength || false,
+            event: this.config.decryptEvent || false,
+            feedback: this.config.decryptFeedback || false,
+            feedbackPercentage: this.config.decryptFeedbackPercentage || false,
+            optionalContent: this.config.decryptOptionalContent || false,
+        };
+
+        this.log.info(
+            "Decrypt Settings: " + JSON.stringify(this.decryptSettings, null, 4)
+        );
 
         // Direkter Aufruf beim Start
         this.fetchAndProcessAlarms();
