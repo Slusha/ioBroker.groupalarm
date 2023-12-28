@@ -1,10 +1,9 @@
 ![Logo](admin/groupalarm.png)
 # ioBroker.groupalarm (Englisch)
+[Lesen Sie diese Anleitung auf Deutsch](#iobrokergroupalarm-deutsch)
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.groupalarm.svg)](https://www.npmjs.com/package/iobroker.groupalarm)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.groupalarm.svg)](https://www.npmjs.com/package/iobroker.groupalarm)
-![Number of Installations](https://iobroker.live/badges/groupalarm-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/groupalarm-stable.svg)
 
 [![NPM](https://nodei.co/npm/iobroker.groupalarm.png?downloads=true)](https://nodei.co/npm/iobroker.groupalarm/)
 
@@ -51,14 +50,10 @@ This adapter is published under the [MIT License](LICENSE).
 
 ---
 
-[Lesen Sie diese Anleitung auf Deutsch](#iobrokergroupalarm-deutsch)
-
 # ioBroker.groupalarm (Deutsch)
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.groupalarm.svg)](https://www.npmjs.com/package/iobroker.groupalarm)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.groupalarm.svg)](https://www.npmjs.com/package/iobroker.groupalarm)
-![Number of Installations](https://iobroker.live/badges/groupalarm-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/groupalarm-stable.svg)
 
 [![NPM](https://nodei.co/npm/iobroker.groupalarm.png?downloads=true)](https://nodei.co/npm/iobroker.groupalarm/)
 
