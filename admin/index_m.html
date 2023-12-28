@@ -28,14 +28,12 @@
 				if ($key.attr('type') === 'checkbox') {
 					// do not call onChange direct, because onChange could expect some arguments
 					$key.prop('checked', settings[id])
-						.on('change', () => onChange())
-						;
+						.on('change', () => onChange());
 				} else {
 					// do not call onChange direct, because onChange could expect some arguments
 					$key.val(settings[id])
 						.on('change', () => onChange())
-						.on('keyup', () => onChange())
-						;
+						.on('keyup', () => onChange());
 				}
 			});
 			onChange(false);
@@ -60,6 +58,35 @@
 			callback(obj);
 		}
 	</script>
+	<style>
+		.half-width-slider {
+			width: 50%;
+			margin: 0 auto;
+			/* Zentriert das Element auf der Seite */
+		}
+
+		.half-width-slider input[type=range] {
+			width: 100%;
+			/* Setzt die Breite des Schiebereglers auf die volle Breite des umgebenden Elements */
+		}
+	</style>
+	<script>
+		function updateMaxAlarmsValue(value) {
+			document.getElementById('maxAlarmsValue').textContent = value;
+		}
+
+		function updateMaxPollingValue(value) {
+			document.getElementById('maxPollingValue').textContent = value;
+		}
+
+		window.onload = function () {
+			// Setze den initialen Wert des Schiebereglers
+			var initialValue = document.getElementById('maxAlarms').value;
+			var initialValuePolling = document.getElementById('maxPolling').value;
+			updateMaxAlarmsValue(initialValue);
+			updateMaxPollingValue(initialValuePolling);
+		};
+	</script>
 
 </head>
 
@@ -77,11 +104,23 @@
 
 		<!-- For example columns with settings: -->
 		<div class="row">
-			<div class="form-group">
-                <label for="apiKey">API Key:</label>
-                <input type="text" id="apiKey" class="form-control value" ng-model="obj.native.apiKey">
-            </div>
-<!--
+			<div class="row half-width-slider">
+				<label for="apiKey">API Key:</label>
+				<input type="text" id="apiKey" class="form-control value" ng-model="obj.native.apiKey">
+			</div>
+
+			<div class="row half-width-slider">
+				<label for="maxAlarms">Max Alarms: <span id="maxAlarmsValue">1</span></label>
+				<input type="range" id="maxAlarms" name="maxAlarms" min="1" max="10" value="1" data-field="maxAlarms"
+					oninput="updateMaxAlarmsValue(this.value)" class="form-control value">
+			</div>
+
+			<div class="row half-width-slider">
+				<label for="maxPolling">Abfragezeit: <span id="maxPollingValue">1</span></label>
+				<input type="range" id="maxPolling" name="maxPolling" min="10" max="600" value="30" data-field="maxPolling"
+					oninput="updateMaxPollingValue(this.value)" class="form-control value">
+			</div>
+			<!--
 			<div class="col s6 input-field">
 				<input type="checkbox" class="value" id="option1" />
 				<label for="option1" class="translate">option1</label>
@@ -93,7 +132,7 @@
 			</div>
 		</div>
 -->
-	</div>
+		</div>
 
 </body>
 
