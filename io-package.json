@@ -1,0 +1,89 @@
+{
+	"common": {
+		"name": "groupalarm",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "groupalarm",
+		"titleLang": {
+			"en": "groupalarm",
+			"de": "Gruppenalarm",
+			"ru": "групповая сигнализация",
+			"pt": "alarme de grupo",
+			"nl": "groepsalarm",
+			"fr": "alarme de groupe",
+			"it": "groupalarm",
+			"es": "alarma grupal",
+			"pl": "alarm grupowy",
+			"uk": "групова тривога",
+			"zh-cn": "群报警"
+		},
+		"desc": {
+			"en": "groupalarm",
+			"de": "Gruppenalarm",
+			"ru": "групповая сигнализация",
+			"pt": "alarme de grupo",
+			"nl": "groepsalarm",
+			"fr": "alarme de groupe",
+			"it": "groupalarm",
+			"es": "alarma grupal",
+			"pl": "alarm grupowy",
+			"uk": "групова тривога",
+			"zh-cn": "群报警"
+		},
+		"authors": [
+			"Slusha <slusha@brockmannIT.de>"
+		],
+		"keywords": [
+			"ioBroker",
+			"template",
+			"Smart Home",
+			"home automation"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "groupalarm.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/Slusha/ioBroker.groupalarm/main/admin/groupalarm.png",
+		"readme": "https://github.com/Slusha/ioBroker.groupalarm/blob/main/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "alarm",
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "materialize"
+		},
+		"dependencies": [
+			{
+				"js-controller": ">=3.3.22"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=5.0.0"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
