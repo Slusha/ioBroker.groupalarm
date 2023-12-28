@@ -1,5 +1,5 @@
 ![Logo](admin/groupalarm.png)
-# ioBroker.groupalarm
+# ioBroker.groupalarm (Englisch)
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.groupalarm.svg)](https://www.npmjs.com/package/iobroker.groupalarm)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.groupalarm.svg)](https://www.npmjs.com/package/iobroker.groupalarm)
@@ -10,124 +10,97 @@
 
 **Tests:** ![Test and Release](https://github.com/Slusha/ioBroker.groupalarm/workflows/Test%20and%20Release/badge.svg)
 
-## groupalarm adapter for ioBroker
+## Overview
+The `ioBroker.groupalarm` adapter enables the integration of GroupAlarm into the ioBroker Smart Home system. GroupAlarm is an advanced alerting system designed for organizations like fire departments, rescue services, and other emergency services. This adapter allows you to integrate your GroupAlarm alerts directly into your ioBroker system.
 
-Describe your project here
+## Features
+- **Alert Reception**: Receives alerts from GroupAlarm and makes them available in the ioBroker system.
+- **Custom Actions**: Allows the execution of custom actions in ioBroker upon receiving alerts.
+- **Easy Configuration**: Quick and straightforward setup via the ioBroker interface.
 
-## Developer manual
-This section is intended for the developer. It can be deleted later.
+## Prerequisites
+- ioBroker installation (copy Github Link)
+- GroupAlarm account and API key
 
-### DISCLAIMER
+## Installation
+1. Install the adapter via the ioBroker administration page.
+2. Enter your GroupAlarm API key and other necessary configuration details in the adapter settings.
 
-Please make sure that you consider copyrights and trademarks when you use names or logos of a company and add a disclaimer to your README.
-You can check other adapters for examples or ask in the developer community. Using a name or logo of a company without permission may cause legal problems for you.
+## Configuration
+### API Key
+To configure your ioBroker.groupalarm adapter, you need a personal API key from GroupAlarm. This key allows the adapter to communicate with the GroupAlarm API and receive alerts. 
+You can generate your personal API key in your GroupAlarm account's profile settings. Follow these steps:
+    1. Log in to your GroupAlarm account.
+    2. Go to Profile Settings.
+    3. Choose the option to create a personal API key.
+    4. Copy the generated key and paste it into the configuration settings of the ioBroker.groupalarm adapter.
+Note: Keep your API key secure and do not share it publicly.
 
-### Getting started
+## Application
+After successful configuration, the adapter will receive alerts from GroupAlarm and present them in the ioBroker system. You can then create automations or notifications based on these alerts.
 
-You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.groupalarm`
-1. Initialize the current folder as a new git repository:  
-	```bash
-	git init -b main
-	git add .
-	git commit -m "Initial commit"
-	```
-1. Link your local repository with the one on GitHub:  
-	```bash
-	git remote add origin https://github.com/Slusha/ioBroker.groupalarm
-	```
+## FAQ
+**Q:** How are alerts handled in the adapter?
+**A:** The adapter receives a specific number of the latest alerts from GroupAlarm. The most recent alert is always found under the key "latestAlarm".
 
-1. Push all files to the GitHub repo:  
-	```bash
-	git push origin main
-	```
-1. Add a new secret under https://github.com/Slusha/ioBroker.groupalarm/settings/secrets. It must be named `AUTO_MERGE_TOKEN` and contain a personal access token with push access to the repository, e.g. yours. You can create a new token under https://github.com/settings/tokens.
-
-1. Head over to [main.js](main.js) and start programming!
-
-### Best Practices
-We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
-check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
-
-### Scripts in `package.json`
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description |
-|-------------|-------------|
-| `test:js` | Executes the tests you defined in `*.test.js` files. |
-| `test:package` | Ensures your `package.json` and `io-package.json` are valid. |
-| `test:integration` | Tests the adapter startup with an actual instance of ioBroker. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `check` | Performs a type-check on your code (without compiling anything). |
-| `lint` | Runs `ESLint` to check your code for formatting errors and potential bugs. |
-| `translate` | Translates texts in your adapter to all required languages, see [`@iobroker/adapter-dev`](https://github.com/ioBroker/adapter-dev#manage-translations) for more details. |
-| `release` | Creates a new release, see [`@alcalzone/release-script`](https://github.com/AlCalzone/release-script#usage) for more details. |
-
-### Writing tests
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
-
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
-
-### Publishing the adapter
-Using GitHub Actions, you can enable automatic releases on npm whenever you push a new git tag that matches the form 
-`v<major>.<minor>.<patch>`. We **strongly recommend** that you do. The necessary steps are described in `.github/workflows/test-and-release.yml`.
-
-Since you installed the release script, you can create a new
-release simply by calling:
-```bash
-npm run release
-```
-Additional command line options for the release script are explained in the
-[release-script documentation](https://github.com/AlCalzone/release-script#command-line).
-
-To get your adapter released in ioBroker, please refer to the documentation 
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
-
-### Test the adapter manually with dev-server
-Since you set up `dev-server`, you can use it to run, test and debug your adapter.
-
-You may start `dev-server` by calling from your dev directory:
-```bash
-dev-server watch
-```
-
-The ioBroker.admin interface will then be available at http://localhost:8091/
-
-Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev-server#command-line) for more details.
-
-## Changelog
-<!--
-	Placeholder for the next version (at the beginning of the line):
-	### **WORK IN PROGRESS**
--->
-
-### **WORK IN PROGRESS**
-* (Slusha) initial release
+## Support
+For issues or questions, please use the issue tracker on GitHub: [ioBroker.groupalarm Issues](https://github.com/Slusha/ioBroker.groupalarm/issues)
 
 ## License
-MIT License
+This adapter is published under the [MIT License](LICENSE).
 
-Copyright (c) 2023 Slusha <slusha@brockmannIT.de>
+---
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+[Lesen Sie diese Anleitung auf Deutsch](#iobrokergroupalarm-deutsch)
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+# ioBroker.groupalarm (Deutsch)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+[![NPM version](https://img.shields.io/npm/v/iobroker.groupalarm.svg)](https://www.npmjs.com/package/iobroker.groupalarm)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.groupalarm.svg)](https://www.npmjs.com/package/iobroker.groupalarm)
+![Number of Installations](https://iobroker.live/badges/groupalarm-installed.svg)
+![Current version in stable repository](https://iobroker.live/badges/groupalarm-stable.svg)
+
+[![NPM](https://nodei.co/npm/iobroker.groupalarm.png?downloads=true)](https://nodei.co/npm/iobroker.groupalarm/)
+
+**Tests:** ![Test and Release](https://github.com/Slusha/ioBroker.groupalarm/workflows/Test%20and%20Release/badge.svg)
+
+
+## Überblick
+Der `ioBroker.groupalarm` Adapter ermöglicht die Integration von GroupAlarm in das ioBroker Smart Home System. GroupAlarm ist ein fortschrittliches Alarmierungssystem, das speziell für Organisationen wie Feuerwehren, Rettungsdienste und andere Hilfsorganisationen entwickelt wurde. Mit diesem Adapter können Sie Ihre GroupAlarm Alarmierungen direkt in Ihr ioBroker-System einbinden.
+
+## Funktionen
+- **Alarmempfang**: Empfängt Alarme von GroupAlarm und stellt sie im ioBroker-System zur Verfügung.
+- **Benutzerdefinierte Aktionen**: Ermöglicht die Ausführung benutzerdefinierter Aktionen in ioBroker bei eingehenden Alarmen.
+- **Einfache Konfiguration**: Schnelle und unkomplizierte Einrichtung über die ioBroker-Oberfläche.
+
+## Voraussetzungen
+- ioBroker-Installation
+- GroupAlarm-Konto und API-Schlüssel
+
+## Installation
+1. Installieren Sie den Adapter über die ioBroker-Administrationsseite. (Github Link kopieren)
+2. Geben Sie in den Adaptereinstellungen Ihren GroupAlarm API-Schlüssel und weitere erforderliche Konfigurationsdetails ein.
+
+## Konfiguration
+
+### API-Schlüssel
+Um Ihren ioBroker.groupalarm Adapter zu konfigurieren, benötigen Sie einen persönlichen API-Schlüssel von GroupAlarm. Der API-Schlüssel ermöglicht es dem Adapter, mit der GroupAlarm-API zu kommunizieren und Alarme zu empfangen. Sie können Ihren persönlichen API-Schlüssel in den Profil-Einstellungen Ihres GroupAlarm-Kontos generieren.
+
+Folgen Sie diesen Schritten, um Ihren API-Schlüssel zu generieren:
+1. Melden Sie sich bei Ihrem GroupAlarm-Konto an.
+2. Gehen Sie zu den Profil-Einstellungen.
+3. Wählen Sie die Option, um einen persönlichen API-Schlüssel zu erstellen.
+4. Nach der Erstellung kopieren Sie den Schlüssel und fügen ihn in die Konfigurationseinstellungen des ioBroker.groupalarm Adapters ein.
+
+## Anwendung
+Nach der erfolgreichen Konfiguration empfängt der Adapter Alarme von GroupAlarm und stellt sie im ioBroker-System dar. Sie können dann Automatisierungen oder Benachrichtigungen basierend auf diesen Alarmen erstellen.
+
+## FAQ
+**Frage:** Wie werden Alarme im Adapter behandelt?
+**Antwort:** Der Adapter empfängt eine bestimmte Anzahl der letzten Alarme von GroupAlarm. Der jeweils letzte Alarm ist immer unter dem Schlüssel "latestAlarm" zu finden.
+
+## Support
+Bei Problemen oder Fragen nutzen Sie bitte den Issue Tracker auf GitHub: [ioBroker.groupalarm Issues](https://github.com/Slusha/ioBroker.groupalarm/issues)
+
+## Lizenz
+Dieser Adapter ist unter der [MIT Lizenz](LICENSE) veröffentlicht.
