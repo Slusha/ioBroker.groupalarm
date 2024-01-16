@@ -1,5 +1,4 @@
-![Logo](admin/groupalarm.png | width=100)
-![Logo_big](admin/groupalarm_logo.png  | width=300)
+![Logo](admin/groupalarm.png)
 # ioBroker.groupalarm (Englisch)
 [Lesen Sie diese Anleitung auf Deutsch](#iobrokergroupalarm-deutsch)
 
