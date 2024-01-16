@@ -1,4 +1,5 @@
 ![Logo](admin/groupalarm.png)
+![Logo_big](admin/groupalarm_logo.png)
 # ioBroker.groupalarm (Englisch)
 [Lesen Sie diese Anleitung auf Deutsch](#iobrokergroupalarm-deutsch)
 
@@ -10,7 +11,7 @@
 **Tests:** ![Test and Release](https://github.com/Slusha/ioBroker.groupalarm/workflows/Test%20and%20Release/badge.svg)
 
 ## Overview
-The `ioBroker.groupalarm` adapter enables the integration of GroupAlarm into the ioBroker Smart Home system. GroupAlarm is an advanced alerting system designed for organizations like fire departments, rescue services, and other emergency services. This adapter allows you to integrate your GroupAlarm alerts directly into your ioBroker system.
+The `ioBroker.groupalarm` adapter enables the integration of GroupAlarm (https://www.groupalarm.com) into the ioBroker Smart Home system. GroupAlarm is an advanced alerting system designed for organizations like fire departments, rescue services, and other emergency services. This adapter allows you to integrate your GroupAlarm alerts directly into your ioBroker system.
 
 ## Features
 - **Alert Reception**: Receives alerts from GroupAlarm and makes them available in the ioBroker system.
@@ -61,7 +62,7 @@ This adapter is published under the [MIT License](LICENSE).
 
 
 ## Überblick
-Der `ioBroker.groupalarm` Adapter ermöglicht die Integration von GroupAlarm in das ioBroker Smart Home System. GroupAlarm ist ein fortschrittliches Alarmierungssystem, das speziell für Organisationen wie Feuerwehren, Rettungsdienste und andere Hilfsorganisationen entwickelt wurde. Mit diesem Adapter können Sie Ihre GroupAlarm Alarmierungen direkt in Ihr ioBroker-System einbinden.
+Der `ioBroker.groupalarm` Adapter ermöglicht die Integration von GroupAlarm (https://www.groupalarm.com) in das ioBroker Smart Home System. GroupAlarm ist ein fortschrittliches Alarmierungssystem, das speziell für Organisationen wie Feuerwehren, Rettungsdienste und andere Hilfsorganisationen entwickelt wurde. Mit diesem Adapter können Sie Ihre GroupAlarm Alarmierungen direkt in Ihr ioBroker-System einbinden.
 
 ## Funktionen
 - **Alarmempfang**: Empfängt Alarme von GroupAlarm und stellt sie im ioBroker-System zur Verfügung.
